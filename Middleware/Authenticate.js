@@ -7,7 +7,7 @@ const Authenticate = async (req, res, next) => {
     const token = await req.headers.authorization
     console.log(token)
     if (token) {
-        jwt.verify(token, process.env.secretKey, (err, decode) => {
+        jwt.verify(token, "imran", (err, decode) => {
             if (decode) {
                 console.log(decode)
                 next()
